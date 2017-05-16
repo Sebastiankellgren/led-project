@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    $(document).ready(function() {
+      var socket = io.connect('http://localhost:8080');
+      $('#button').click(function(e){
+        socket.emit('click');
+        e.preventDefault();
+      });
+    });  
+    </script>
+    <style>
+        body {
+          background-color: black;
+        }
+        h1 {
+          color: white;
+          text-align: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: 50px auto;
+        }
+        #button {
+          display: block;
+          margin: 50vh auto 0;
+          font-size: 40px;
+          color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Av: Sebastian & Tobias</h1>
+    <button id="button" href="#">LED ON/OFF</button>
+</body>
+</html>
